@@ -5,7 +5,7 @@ local s = VLib:Window("Galaxy Hub", "Redwood Prison", "SUS")
 
 local ss = s:Tab("Home")
 
-ss:Toggle("Escape From Prison",function()
+ss:Button("Escape From Prison",function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-601, -24, -343)
        
 ss:Button("Unlock all Gamepasses",function()
@@ -27,3 +27,7 @@ ss:Button("Teleport to Guards Spawn",function(v)
 ss:Label("o carinha que mora logo ali#9600 for script")
 
 ss:Label("Vep#1003 for ui lib")
+end)
+end)
+end)
+end
