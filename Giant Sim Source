@@ -5,14 +5,14 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
     game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 end)
 --[[ 
-    Author: Scarlett and xnxxx
+    Author: Scarlett
     
     Hope the little patch works, I might add a little bit more features but idk
 --]]
 
 local quick = loadstring(game:HttpGet('https://raw.githubusercontent.com/Belkworks/quick/master/init.lua'))();
 local lib = loadstring(game:HttpGet('https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua'))().Load({
-    Title = 'doggy puppy kitten thing'
+    Title = 'Giant Simulator  ―  Bleus',
     Style = 1,
     SizeX = 400,
     SizeY = 400,
@@ -97,6 +97,13 @@ local main = lib({
         end;
     });
 end;
+main.Toggle({
+    Text = 'Auto Rebirth',
+    Callback = function()
+local Event = game:GetService("ReplicatedStorage").Aero.AeroRemoteServices.GameService.RebirthRequest
+Event:InvokeServer()
+local Event = game:GetService("ReplicatedStorage").Aero.AeroRemoteServices.GameService.MassUpgradeSkills
+Event:InvokeServer()
 
 pcall(function() 
     if getgenv().mainLoop then
@@ -120,14 +127,5 @@ getgenv().mainLoop = stepped:Connect(function()
         end;
     end;
 end);
-
-    main.Toggle({
-        Text = 'Auto Rebirth',
-        Callback = function()
-    local Event = game:GetService("ReplicatedStorage").Aero.AeroRemoteServices.GameService.RebirthRequest
-Event:InvokeServer()
-local Event = game:GetService("ReplicatedStorage").Aero.AeroRemoteServices.GameService.MassUpgradeSkills
-Event:InvokeServer()
-wait()
 end
 })
